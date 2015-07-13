@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>How to write documentation AND have a good time</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="assets/css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# How to write documentation <br>AND have a good time
+August 20 2015
+
+Christian Trabold [@ctrabold](https://twitter.com/ctrabold)
+
+---
+class: middle
+
+background-image: url(assets/images/agile_manifesto.png)
+
+.copyright[http://agilemanifesto.org/]
+---
+class: middle
+# Best practices
+
+The following simple techiques helped me and other developers to improve the documentation for software they write.
+
+Now they even like writing and updating the documentation.
+
+---
+class: middle
+
+# Writing documentation = Bad time?
+
+Sometimes true.
+
+---
+background-image: url(assets/images/documentation_fail.jpg)
+
+.copyright[http://media1.onsugar.com/files/2014/03/05/931/n/1922441/c274dfc20f4990b1_shutterstock_50898238.jpg.xxxlarge_2x.jpg]
+
+---
+class: middle
+
+# Signs for bad documentation
+
+- **Permissions:** You need permissions to access the Wiki page for the project to see documentation about the project
+- **Outdated:** You find outdated documentation and need to rewrite all because the software changed so much
+- **Can not edit:** Content is hard to edit e.g. Diagrams and you need proprietary tools and licenses that you don't have or want to buy
+
+---
+class: middle
+
+# NO Documentation = bad time!
+
+Always true.
+
+---
+class: center, middle
+
+# What? Where? How?!
+
+<img src="assets/images/shock.png" alt="Shock!" width="550">
+.copyright[https://nitratediva.files.wordpress.com/2012/10/3.png]
+---
+class: middle
+
+# How do I write agile documentation?
+
+## Do I need to learn new tools? NO!
+## Does it slow me down? NO!
+## Easy version control? YES!
+
+---
+class: middle
+
+# Why is that 'agile'?
+
+Because you handle change with confidence.
+
+---
+class: background-color:#93ACDC
+
+background-image: url(assets/images/powerup.jpg)
+.copyright[http://www.biteback.org.au/bdyouth/assets/Image/powerup.jpg]
+
+---
+class: middle
+
+# Rules
+
+1. Use plain text wherever possible (diagrams, lists)
+1. Treat commit messages as documentation
+1. Add a `README.md` to project root (`.md` = `markdown`)
+1. Keep your docs <span title="Do not repeat yourself!">DRY</span> with hyperlinks (connect, not duplicate)
+1. PRO: Create diagrams with `seqdiag`
+1. PRO: Create presentations with HTML e.g. remark
+
+---
+class: middle
+
+# Markdown source code:
+
+Source:
+```
+# HEADLINE 1
+## HEADLINE 2
+### HEADLINE 3
+
+[link](url)
+
+- List item 1
+- List item 2
+- List item 3
+```
+---
+class: middle
+
+# Markdown rendered:
+
+# HEADLINE 1
+## HEADLINE 2
+### HEADLINE 3
+
+[link](url)
+
+- List item 1
+- List item 2
+- List item 3
+
+---
+class: middle
+
+# Commit messages are _the brain_ of the project
+
+- Help you remember _who_ changed code, _why_ and _when_
+- Use the version control as documentation FOR YOURSELF!
+- 'I can't remember why I did this' is the worst.
+- Better say: Wait, I'll look it up.
+
+---
+class: middle
+
+# Good commit message
+
+```
+Redirect user to the requested page after login
+
+https://trello.com/path/to/relevant/card
+
+Users were being redirected to the home page after login, which is less
+useful than redirecting to the page they had originally requested before
+being redirected to the login form.
+
+ * Store requested path in a session variable
+ * Redirect to the stored location after successfully logging in the user
+
+Fixes #[issue id]
+```
+.copyright[https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message]
+---
+class: center, middle
+
+# Empty commit messages make me want to cry each time…
+
+<img src="assets/images/shock_baby.jpg" alt="Shock!">
+
+Because it is so simple to provide more context
+.copyright[http://blog.getrealinontario.com/media/users/jody/ShockJillGgallery.jpg]
+---
+class: middle
+
+# README files are the starting point for the project
+
+- Helps you to clarify the purpose of the project
+- Helps others to get started
+- Helps others to help you
+
+---
+class: middle
+
+# How to start a README?
+
+---
+class: middle
+
+# Write it for _yourself_
+
+- YOU are the most important person on the project and in your life
+- YOU have to explain it to you first … then you have to explain it to someone else. Pseudo-Code is OK.
+- YOU have to make sense of the things you code first, then others have to understand it. Make it easy for them.
+
+---
+class: middle
+
+# Start by writing down your learnings
+
+- Your learnings are also helpful for others.
+
+---
+class: middle
+
+# If the README gets too big: _restructure it_
+
+- Cleanup and update regularly
+- You can create `CONTRIBUTING.md`, `LICENSE.md` or `ROADMAP.md` files too
+
+---
+class: middle
+
+# Benefits from writing a README
+
+- Clarify what you want to do
+- Step in others shoes by writing FAQs for them
+- Great way to clarify your thoughts: If it does not fit into Plaintext - stop and clarify!
+Supress the urge to open a GUI tool if it is hard to describe with plaintext
+
+Good read: http://tom.preston-werner.com/2010/08/23/readme-driven-development.html
+
+---
+class: middle
+
+# Example README
+
+```
+For example present an overview over the project file structure
+
+Use `tree` tool to generate and paste into the document and indent as 'monofont':
+
+    .
+    ├── README.md       - This document
+    ├── infrastructure  - Infrastructure as code
+    ├── ios             - iOS application
+    ├── prototype       - Prototypes and examples
+    ├── server          - Backend application
+    └── test            - Tests for the full application stack.
+
+# Requirements
+
+# Installation
+
+# How to contribute?
+
+# Author(s)
+```
+
+---
+class: middle
+
+# READMEs are real!
+
+- Rendered by [Github](http://markdown.github.io/), [Gitlab](https://gitlab.com/gitlab-org/gitlab-ce/blob/6-4-stable/doc/markdown/markdown.md), [Bitbucket](https://confluence.atlassian.com/bitbucket/use-and-administer-repositories/use-your-repository/display-readme-text-on-the-overview), [Gitblit](http://gitblit.com/features.html) automatically
+- Tools like `npm` require a `README.md` and throw a warning when the file is missing
+
+---
+class: middle
+
+# Diagrams as plain text
+
+---
+class: middle
+
+# Write down data flow as text
+```
+seqdiag {
+  browser -> webserver [note = "request\nGET /"];
+  browser <- webserver [rightnote = "send response"];
+}
+```
+
+---
+class: middle
+
+# Convert into graphic
+```
+seqdiag diagram.diag
+```
+
+---
+class: middle
+
+# Result
+
+![example diagram](diagrams/diagram.png)
+
+---
+class: middle
+
+# Useful links
+
+- [Learn Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- [Readme Driven Development](http://tom.preston-werner.com/2010/08/23/readme-driven-development.html)
+- [Draw ASCII Diagrams](http://asciiflow.com/)
+- [See Seqdiaq](http://blockdiag.com/en/index.html) - sequence diagrams
+- [Follow ThoughtWorks Tech Radar](http://www.thoughtworks.com/radar/techniques/generated-infrastructure-diagrams)
+- [Mindmaps with markmap](https://github.com/dundalek/markmap) - mindmaps in plaintext
+
+---
+class: middle
+
+# Plain text is very powerful
+
+---
+class: middle
+
+# If your idea is hard to put into plaintext it probably is a bad idea. ;-)
+
+---
+class: middle
+
+# Thanks!
+    </textarea>
+    <script src="assets/js/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
